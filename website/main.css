@@ -1,0 +1,99 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    padding: 0;
+    margin: 0;
+    background: #00253e;
+}
+
+#app {
+    display: grid;
+    grid-auto-rows: minmax(100px, auto);
+    height: 100%;
+    color: white;
+    justify-content: center;
+    grid-gap: 1em;
+    font-size: 20px;
+    font-family: 'Oswald', sans-serif;
+    margin: auto;
+}
+
+hr {
+    width: 100%;
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 3px;
+    font-size: larger;
+}
+
+#zip {
+    height: 30px;
+
+}
+
+input,
+textarea {
+    border-radius: 5px;
+    border: none;
+    padding: 7px 10px;
+    font-size: 20px;
+    width: 100%;
+}
+
+button {
+    display: block;
+    border-radius: 5px;
+    border: none;
+    padding: 7px 10px;
+    font-size: 20px;
+    width: 50%;
+    margin: 10px auto;
+    cursor: pointer;
+}
+
+button:hover {
+    border: 2px solid white;
+    background-color: #90bedd;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+.color-red {
+    color: red;
+}
+
+#entryHolder {
+    min-height: 300px;
+}
+
+
+/* Style for Placeholder Text*/
+::placeholder {
+    /* Firefox, Chrome, Opera */
+    color: #00253e;
+    font-family: 'Oswald', sans-serif;
+
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #00253e;
+    font-family: 'Oswald', sans-serif;
+
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #00253e;
+    font-family: 'Oswald', sans-serif;
+
+}
