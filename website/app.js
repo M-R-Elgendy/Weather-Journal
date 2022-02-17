@@ -1,13 +1,13 @@
 /* Global Variables */
 const baseUrl = 'https://api.openweathermap.org/data/2.5/weather';
-const apiKey = 'c42931776eef40cc9aa2e9251b7a4700'; // My API Key 
+const apiKey = 'c42931776eef40cc9aa2e9251b7a4700&units=metric'; // My API Key 
 const genBtn = document.querySelector('#generate');
 const errSpan = document.querySelector('.errSpan');
 const errMsg = document.querySelector('.errMsg');
 
 // Create a new date instance dynamically with JS
 let d = new Date();
-let newDate = d.getMonth() + '.' + d.getDate() + '.' + d.getFullYear();
+let newDate = (d.getMonth() + 1) + '.' + d.getDate() + '.' + d.getFullYear();
 
 
 // Event listener to add function to existing HTML DOM element
@@ -52,16 +52,6 @@ const sendData = async (url = '', data = {}) => {
     }
 };
 
-// Function convert from Kelvin to Celsius
-const convertToCelsius = (temp) => {
-    if (temp < (0)) {
-        return ' < 0 Kelvin';
-    } else {
-        const celsius = (temp - 273.15).toFixed(2)
-        return celsius;
-    }
-}
-
 // Funtion to update UI
 const updateUI = async () => {
     const request = await fetch('/all');
@@ -94,7 +84,7 @@ function performAction(e) {
                 // add data to POST request
                 errSpan.classList.add("hidden");
                 sendData('/add', {
-                    temp: convertToCelsius(data.main.temp),
+                    temp: data.main.temp,
                     date: newDate,
                     content: content,
                     name: data.name
